@@ -21,22 +21,7 @@ CRASH_IMMIDIATE_DIR = "/home/ubuntu22/bababak/chrome_crashes/crash"
 CRASH_TIMEOUT_DIR = "/home/ubuntu22/bababak/chrome_crashes/crash_timeout"
 TIMEOUT_DIR = "/home/ubuntu22/bababak/chrome_crashes/timeout"
 
-def claim_case_folder(lock):
-    # get case (moved to processing dir)
-    with lock:
-        case_folders = [f for f in os.listdir(BASE_DIR) if f.startswith("cases_")]
-        if not case_folders:
-            return None
-        selected_folder = random.choice(case_folders)
-        src = os.path.join(BASE_DIR, selected_folder)
-        dest = os.path.join(PROCESS_DIR, selected_folder)
-        try:
-            shutil.move(src, dest)
-            return dest
-        except Exception as e:
-            print(f"Error claiming case: {e}")
-            return None
-
+# 지금은 안 써요 asan로그 symbolize 하려고 했는데...음...
 def symbolize_log(log_content):
     """Symbolize ASAN log output"""
     try:
@@ -51,6 +36,24 @@ def symbolize_log(log_content):
         print(f"Symbolization failed: {e}")
         return log_content
 
+# fuzz_cases에서 폴더 찾아서 processing으로 옮기고 퍼징 시작
+def claim_case_folder(lock):
+    # 한 폴더에 동시접근 막는 lock
+    with lock:
+        case_folders = [f for f in os.listdir(BASE_DIR) if f.startswith("cases_")]
+        if not case_folders:
+            return None
+        selected_folder = random.choice(case_folders)
+        src = os.path.join(BASE_DIR, selected_folder)
+        dest = os.path.join(PROCESS_DIR, selected_folder)
+        try:
+            shutil.move(src, dest)
+            return dest
+        except Exception as e:
+            print(f"Error claiming case: {e}")
+            return None
+
+# 이런 문구가 있으면 asan 로그 떴다고 간주
 def check_asan_log(stderr_content):
     """Check if stderr contains ASAN error log"""
     asan_indicators = [
@@ -59,8 +62,8 @@ def check_asan_log(stderr_content):
         "ASAN:DEADLYSIGNAL",
         "ASAN:SIGSEGV",
         "AddressSanitizer:DEADLYSIGNAL",
-        "Check failed:",  # Check failure도 ASAN 로그로 간주
-        "FATAL:"         # FATAL error도 ASAN 로그로 간주
+        "Check failed:",
+        "FATAL:"
     ]
     return any(indicator in stderr_content for indicator in asan_indicators)
 
@@ -96,6 +99,13 @@ def run_test_case(case_dir):
     with open(stdout_path, 'w') as stdout_f, open(stderr_path, 'w') as stderr_f:
         proc = subprocess.Popen(cmd, env=env, stdout=stdout_f, stderr=stderr_f)
 
+    '''
+    4가지의 경우로 분류
+        1. timeout 안 남 + asan 로그 없음 -> 정상 종료
+        2. timeout 안 남 + asan 로그 있음 -> crash
+        3. timeout 남 + asan 로그 없음 -> timeout
+        4. timeout 남 + asan 로그 있음 -> timeout_crash
+    '''
     try:
         returncode = proc.wait(timeout=30)
         # Timeout 없이 종료된 경우
@@ -127,6 +137,7 @@ def run_test_case(case_dir):
     shutil.rmtree(user_data_dir, ignore_errors=True)
     return crash_type
 
+
 def worker(lock):
     """Worker thread function for continuous fuzzing"""
 
@@ -139,6 +150,7 @@ def worker(lock):
         print(f"Processing: {os.path.basename(case_dir)}")
         try:
             crash_type = run_test_case(case_dir)
+            # crash 타입에 따라 해당 testcase를 저장할지(어디다 할지), 삭제할지 결정
             if crash_type:
                 crash_name = f"{os.path.basename(case_dir)}_{int(time.time())}"
 
@@ -159,6 +171,7 @@ def worker(lock):
             print(f"Error processing case: {e}")
             shutil.rmtree(case_dir, ignore_errors=True)
 
+# 퍼저 멈출 때 processing 안에 있는 퍼징 중이던 파일들 삭제
 def cleanup_processing_dir():
     """Clean up the processing directory"""
     for item in os.listdir(PROCESS_DIR):

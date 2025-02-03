@@ -20,6 +20,7 @@ def generate_html_files(num_files=10):
     output_dir = os.path.join(BASE_DIR, random_folder_name)
     _process_dir = os.path.join(PROCESS_DIR, random_folder_name)
     try:
+        # 일단 tmp에서 작업
         os.makedirs(temp_dir, exist_ok=True)
 
         # Domato를 사용하여 HTML 파일 생성
@@ -45,19 +46,21 @@ def generate_html_files(num_files=10):
 
             with open(file_path, "w") as file:
                 file.write(content)
-
+        # temp에서 fuzz_cases로 이동
         shutil.move(temp_dir, output_dir)
 
         print(f"Generated {num_files} HTML files in {output_dir}")
+
     except KeyboardInterrupt:
         print("\nKeyboardInterrupt detected. Cleaning up temporary files...")
         raise
     finally:
         if os.path.exists(temp_dir):
+            # 만들다 ctrl+c로 끊으면 tmp에서 덜 만들어진거 삭제
             shutil.rmtree(temp_dir)
             print(f"Temporary directory {temp_dir} has been cleaned up.")
 
 if __name__ == "__main__":
     while(1):
         generate_html_files()
-        #time.sleep(1)
+        time.sleep(1)
