@@ -28,7 +28,7 @@
 <inputtype> = "date"
 <inputtype> = "datetime"
 <inputtype> = "datetime-local"
-<inputtype> = "emailNew"
+<inputtype> = "email"
 <inputtype> = "file"
 <inputtype> = "hidden"
 <inputtype> = "image"
@@ -108,12 +108,15 @@
 <lielements> = <newline><HTMLLIElement><newline>
 <lielements> = <newline><HTMLLIElement><newline><HTMLLIElement><newline>
 
+<figcaption_content> = <htmlsafestring min=32 max=126>
+<figcaption_content> = <newline><HTMLFigCaptionElement><newline>
+<figcaption_content> = <newline><HTMLFigCaptionElement><newline><HTMLFigCaptionElement><newline>
+
 <formchildelement> = <HTMLLegendElement>
 <formchildelement> = <HTMLInputElement>
 <formchildelement> = <HTMLTextAreaElement>
 <formchildelement> = <HTMLButtonElement>
 <formchildelement> = <HTMLLegendElement>
-<formchildelement> = <HTMLKeygenElement>
 <formchildelement> = <HTMLObjectElement>
 <formchildelement> = <HTMLSelectElement>
 <formchildelement> = <HTMLOutputElement>
@@ -141,7 +144,6 @@
 <menuchildren> = <newline><menuchild><newline>
 <menuchildren> = <newline><menuchild><newline><menuchild><newline>
 
-<menuchild> = <menuitemelement>
 <menuchild> = <HTMLMenuElement>
 
 <paramelements> = <htmlsafestring min=32 max=126>
@@ -167,7 +169,6 @@
 #<element> = <HTMLAppletElement>
 #<element> = <HTMLAreaElement>
 <element> = <HTMLBaseElement>
-<element> = <HTMLBaseFontElement>
 <element> = <HTMLBRElement>
 <element> = <HTMLButtonElement>
 <element> = <HTMLCanvasElement>
@@ -189,7 +190,6 @@
 <element> = <HTMLIFrameElement>
 <element> = <HTMLImageElement>
 <element> = <HTMLInputElement>
-<element> = <HTMLKeygenElement>
 <element> = <HTMLLabelElement>
 #<element> = <HTMLLegendElement>
 #<element> = <HTMLLIElement>
@@ -229,9 +229,9 @@
 #<element> = <HTMLTrackElement>
 <element> = <HTMLUListElement>
 <element> = <HTMLVideoElement>
-<element> = <HTMLContentElement>
 <element> = <HTMLShadowElement>
 #<element> = <colgroupelement>
+<element> = <HTMLFigCaptionElement>
 
 <element> = <svgelement_svg>
 <element> = <mathmlelement_math>
@@ -247,6 +247,9 @@
 <attribute> = <attribute_align>
 <attribute> = <attribute_alink>
 <attribute> = <attribute_allowfullscreen>
+<attribute> = <attribute_allow>
+<attribute> = <attribute_allowpaymentrequest>
+<attribute> = <attribute_loading>
 <attribute> = <attribute_alt>
 <attribute> = <attribute_archive>
 <attribute> = <attribute_as>
@@ -291,6 +294,7 @@
 <attribute> = <attribute_controls>
 <attribute> = <attribute_coords>
 <attribute> = <attribute_crossorigin>
+<attribute> = <attribute_controlslist>
 <attribute> = <attribute_data>
 <attribute> = <attribute_datetime>
 <attribute> = <attribute_declare>
@@ -456,6 +460,23 @@
 <attribute> = <attribute_vspace>
 <attribute> = <attribute_width>
 <attribute> = <attribute_wrap>
+<attribute> = <attribute_popovertarget>
+<attribute> = <attribute_popovertargetaction>
+<attribute> = <attribute_decoding>
+<attribute> = <attribute_elementtiming>
+<attribute> = <attribute_fetchpriority>
+<attribute> = <attribute_blocking>
+<attribute> = <attribute_httpequiv>
+<attribute> = <attribute_nomodule>
+<attribute> = <attribute_shadowrootmode>
+<attribute> = <attribute_shadowrootclonable>
+<attribute> = <attribute_shadowrootdelegatesfocus>
+<attribute> = <attribute_minlength>
+<attribute> = <attribute_autocorrect>
+<attribute> = <attribute_autocomplete>
+<attribute> = <attribute_autocapitalize>
+<attribute> = <attribute_httpequiv>
+<attribute> = <attribute_media>
 
 <attribute> = <attribute_eventhandler>
 <attribute> = <attribute_eventhandler>
@@ -505,6 +526,24 @@
 <attribute_eventhandler> = <attribute_onended>
 <attribute_eventhandler> = <attribute_onerror>
 <attribute_eventhandler> = <attribute_onfocus>
+<attribute_eventhandler> = <attribute_canplay>
+<attribute_eventhandler> = <attribute_canplaythrough>
+<attribute_eventhandler> = <attribute_complete>
+<attribute_eventhandler> = <attribute_durationchange>
+<attribute_eventhandler> = <attribute_emptied>
+<attribute_eventhandler> = <attribute_ended>
+<attribute_eventhandler> = <attribute_loadeddata>
+<attribute_eventhandler> = <attribute_loadedmetadata>
+<attribute_eventhandler> = <attribute_pause>
+<attribute_eventhandler> = <attribute_ratechange>
+<attribute_eventhandler> = <attribute_seeked>
+<attribute_eventhandler> = <attribute_seeking>
+<attribute_eventhandler> = <attribute_stalled>
+<attribute_eventhandler> = <attribute_suspend>
+<attribute_eventhandler> = <attribute_timeupdate>
+<attribute_eventhandler> = <attribute_volumechange>
+<attribute_eventhandler> = <attribute_waiting>
+<attribute_eventhandler> = <attribute_play>
 <attribute_eventhandler> = <attribute_onfocusin>
 <attribute_eventhandler> = <attribute_onfocusout>
 <attribute_eventhandler> = <attribute_onhashchange>
@@ -588,6 +627,9 @@
 <attribute_align> = align="<align_value>"
 <attribute_alink> = alink="<alink_value>"
 <attribute_allowfullscreen> = allowfullscreen="<allowfullscreen_value>"
+<attribute_allow> = allow ="<allow_value>"
+<attribute_allowpaymentrequest> = allowpaymentrequest = "allowpaymentrequest_value"
+<attribute_loading> = loading="<loading_value>"
 <attribute_alt> = alt="<alt_value>"
 <attribute_archive> = archive="<archive_value>"
 <attribute_aria-activedescendant> = aria-activedescendant="<aria-activedescendant_value>"
@@ -654,9 +696,9 @@
 <attribute_challenge> = challenge="<challenge_value>"
 <attribute_char> = char="<char_value>"
 <attribute_charoff> = charoff="<charoff_value>"
-<attribute_charset> = charset="<charset_value>"
 <attribute_checked> = checked="<checked_value>"
 <attribute_cite> = cite="<cite_value>"
+<attribute_charset> = charset="<charset_value>"
 <attribute_class> = class="<class_value>"
 <attribute_classid> = classid="<classid_value>"
 <attribute_clear> = clear="<clear_value>"
@@ -673,6 +715,7 @@
 <attribute_controls> = controls="<controls_value>"
 <attribute_coords> = coords="<coords_value>"
 <attribute_crossorigin> = crossorigin="<crossorigin_value>"
+<attribute_controlslist> = controlslist="<controlslist_value>"
 <attribute_data> = data="<data_value>"
 <attribute_datetime> = datetime="<datetime_value>"
 <attribute_declare> = declare="<declare_value>"
@@ -782,6 +825,7 @@
 <attribute_ref> = ref="<ref_value>"
 <attribute_referrerpolicy> = referrerpolicy="<referrerpolicy_value>"
 <attribute_rel> = rel="<rel_value>"
+<attribute_autocapitalize> = autocapitalize="<autocapitalize_value>"
 <attribute_required> = required="<required_value>"
 <attribute_results> = results="<results_value>"
 <attribute_rev> = rev="<rev_value>"
@@ -824,6 +868,9 @@
 <attribute_style> = style="<style_value>"
 <attribute_summary> = summary="<summary_value>"
 <attribute_tabindex> = tabindex="<tabindex_value>"
+<attribute_decoding> = decoding="<decoding_value>"
+<attribute_elementtiming> = elementtiming="<elementtiming_value>"
+<attribute_fetchpriority> = fetchpriority="<fetchpriority_value>"
 <attribute_target> = target="<target_value>"
 <attribute_text> = text="<text_value>"
 <attribute_title> = title="<title_value>"
@@ -840,6 +887,19 @@
 <attribute_vspace> = vspace="<vspace_value>"
 <attribute_width> = width="<width_value>"
 <attribute_wrap> = wrap="<wrap_value>"
+<attribute_popovertarget> = popovertarget="<popovertarget_value>"
+<attribute_popovertargetaction> = popovertargetaction="<popovertargetaction_value>"
+<attribute_blocking> = blocking="<blocking_value>"
+<attribute_httpequiv> = http-equiv="<httpequiv_value>"
+<attribute_nomodule> = nomodule="<nomodule_value>"
+<attribute_shadowrootmode> = shadowrootmode="<shadowrootmode_value>"
+<attribute_shadowrootclonable> = shadowrootmode="<shadowrootclonable_value>"
+<attribute_shadowrootdelegatesfocus> = shadowrootmode="<shadowrootdelegatesfocus_value>"
+<attribute_minlength> = minlength="<minlength_value>"
+<attribute_autocorrect> = autocorrect="<autocorrect_value>"
+<attribute_autocomplete> = autocomplete="<autocomplete_value>"
+
+
 
 #event handlers
 <attribute_onabort> = onabort="<eventhandler>"
@@ -949,6 +1009,28 @@
 <attribute_onwebkitspeechchange> = onwebkitspeechchange="<eventhandler>"
 <attribute_onwebkittransitionend> = onwebkittransitionend="<eventhandler>"
 <attribute_onwheel> = onwheel="<eventhandler>"
+<attribute_disableremoteplayback> = disableremoteplayback="<eventhandler>"
+<attribute_loop> = loop="<eventhandler>"
+<attribute_muted> = muted="<eventhandler>"
+<attribute_audioprocess> = audioprocess="<eventhandler>"
+<attribute_canplay> = canplay="<eventhandler>"
+<attribute_canplaythrough> = canplaythrough="<eventhandler>"
+<attribute_complete> = complete="<eventhandler>"
+<attribute_durationchange> = durationchange="<eventhandler>"
+<attribute_emptied> = emptied="<eventhandler>"
+<attribute_ended> = ended="<eventhandler>"
+<attribute_loadeddata> = loadeddata="<eventhandler>"
+<attribute_loadedmetadata> = loadedmetadata="<eventhandler>"
+<attribute_pause> = pause="<eventhandler>"
+<attribute_ratechange> = ratechange="<eventhandler>"
+<attribute_seeked> = seeked="<eventhandler>"
+<attribute_seeking> = seeking="<eventhandler>"
+<attribute_stalled> = stalled="<eventhandler>"
+<attribute_suspend> = suspend="<eventhandler>"
+<attribute_timeupdate> = timeupdate="<eventhandler>"
+<attribute_volumechange> = volumechange="<eventhandler>"
+<attribute_waiting> = waiting="<eventhandler>"
+<attribute_play> = play="<eventhandler>"
 
 <attributestring> = <htmlsafestring min=32 max=126>
 <attributechar> = <char min=32 max=126>
@@ -960,14 +1042,12 @@
 <otherelement> = <lt>abbr <abbr_attributes> <attributes><gt><innerelements><lt>/abbr<gt>
 <otherelement> = <lt>acronym <acronym_attributes> <attributes><gt><innerelements><lt>/acronym<gt>
 <otherelement> = <lt>address <address_attributes> <attributes><gt><innerelements><lt>/address<gt>
-<HTMLAppletElement> = <lt>applet <applet_attributes> <attributes><gt><htmlsafestring min=32 max=126><lt>/applet<gt>
 <HTMLAreaElement> = <lt>area <area_attributes> <attributes><gt><lt>/area<gt>
 <otherelement> = <lt>article <article_attributes> <attributes><gt><innerelements><lt>/article<gt>
 <otherelement> = <lt>aside <aside_attributes> <attributes><gt><innerelements><lt>/aside<gt>
 <HTMLAudioElement> = <lt>audio <audio_attributes> <attributes><gt><mediachildren><lt>/audio<gt>
 <otherelement> = <lt>b <b_attributes> <attributes><gt><innerelements><lt>/b<gt>
 <HTMLBaseElement> = <lt>base <base_attributes> <attributes><gt><lt>/base<gt>
-<HTMLBaseFontElement> = <lt>basefont <basefont_attributes> <attributes><gt><lt>/basefont<gt>
 <otherelement> = <lt>bdi <bdi_attributes> <attributes><gt><innerelements><lt>/bdi<gt>
 <otherelement> = <lt>bdo <bdo_attributes> <attributes><gt><innerelements><lt>/bdo<gt>
 <otherelement> = <lt>bgsound <attributes><gt><innerelements><lt>/bgsound<gt>
@@ -978,13 +1058,10 @@
 <HTMLButtonElement> = <lt>button <button_attributes> <attributes><gt><innerelements><lt>/button<gt>
 <HTMLCanvasElement> = <lt>canvas <canvas_attributes> <attributes><gt><innerelements><lt>/canvas<gt>
 <HTMLTableCaptionElement> = <lt>caption <caption_attributes> <attributes><gt><innerelements><lt>/caption<gt>
-<otherelement> = <lt>center <center_attributes> <attributes><gt><innerelements><lt>/center<gt>
 <otherelement> = <lt>cite <cite_attributes> <attributes><gt><innerelements><lt>/cite<gt>
 <otherelement> = <lt>code <code_attributes> <attributes><gt><innerelements><lt>/code<gt>
 <HTMLTableColElement> = <lt>col <col_attributes> <attributes><gt><innerelements><lt>/col<gt>
 <colgroupelement> = <lt>colgroup <colgroup_attributes> <attributes><gt><colelements><lt>/colgroup<gt>
-<otherelement> = <lt>command <command_attributes> <attributes><gt><innerelements><lt>/command<gt>
-<HTMLContentElement> = <lt>content <content_attributes> <attributes><gt><innerelements><lt>/content<gt>
 <HTMLDataElement> = <lt>data <data_attributes> <attributes><gt><innerelements><lt>/data<gt>
 <HTMLDataListElement> = <lt>datalist <datalist_attributes> <attributes><gt><optionelements><lt>/datalist<gt>
 <ddelement> = <lt>dd <dd_attributes> <attributes><gt><innerelements><lt>/dd<gt>
@@ -1001,6 +1078,7 @@
 <HTMLFieldSetElement> = <lt>fieldset <fieldset_attributes> <attributes><gt><formchildren><lt>/fieldset<gt>
 <otherelement> = <lt>figcaption <attributes><gt><innerelements><lt>/figcaption<gt>
 <otherelement> = <lt>figure <figure_attributes> <attributes><gt><innerelements><lt>/figure<gt>
+<otherelement> = <lt>figcaption <figcaption_attributes> <attributes><gt><innerelements><lt>/figcaption<gt>
 <HTMLFontElement> = <lt>font <font_attributes> <attributes><gt><innerelements><lt>/font<gt>
 <otherelement> = <lt>footer <footer_attributes> <attributes><gt><innerelements><lt>/footer<gt>
 <HTMLFormElement> = <lt>form <form_attributes> <attributes><gt><formchildren><lt>/form<gt>
@@ -1017,13 +1095,11 @@
 <HTMLHRElement> = <lt>hr <hr_attributes> <attributes><gt><innerelements><lt>/hr<gt>
 <otherelement> = <lt>i <i_attributes> <attributes><gt><innerelements><lt>/i<gt>
 <HTMLIFrameElement> = <lt>iframe <iframe_attributes> <attributes><gt><htmlsafestring min=32 max=126><lt>/iframe<gt>
-<HTMLImageElement> = <lt>image <image_attributes> <attributes><gt><lt>/image<gt>
 <HTMLImageElement> = <lt>img <img_attributes> <attributes><gt><lt>/img<gt>
 <HTMLInputElement> = <lt>input <input_attributes> type=<inputtype> <attributes><gt>
 <HTMLModElement> = <lt>ins <ins_attributes> <attributes><gt><innerelements><lt>/ins<gt>
 <otherelement> = <lt>isindex <attributes><gt><innerelements><lt>/isindex<gt>
 <otherelement> = <lt>kbd <kbd_attributes> <attributes><gt><innerelements><lt>/kbd<gt>
-<HTMLKeygenElement> = <lt>keygen <keygen_attributes> <attributes><gt>
 <HTMLLabelElement> = <lt>label <label_attributes> <attributes><gt><innerelements><lt>/label<gt>
 <otherelement> = <lt>layer <attributes><gt><innerelements><lt>/layer<gt>
 <HTMLLegendElement> = <lt>legend <legend_attributes> <attributes><gt><innerelements><lt>/legend<gt>
@@ -1035,7 +1111,6 @@
 <otherelement> = <lt>mark <mark_attributes> <attributes><gt><innerelements><lt>/mark<gt>
 <HTMLMarqueeElement> = <lt>marquee <marquee_attributes> <attributes><gt><innerelements><lt>/marquee<gt>
 <HTMLMenuElement> = <lt>menu <menu_attributes> <attributes><gt><menuchildren><lt>/menu<gt>
-<menuitemelement> = <lt>menuitem <menuitem_attributes> <attributes><gt><innerelements><lt>/menuitem<gt>
 <HTMLMetaElement> = <lt>meta <meta_attributes> <attributes><gt><lt>/meta<gt>
 <HTMLMeterElement> = <lt>meter <meter_attributes> <attributes><gt><innerelements><lt>/meter<gt>
 <otherelement> = <lt>nav <nav_attributes> <attributes><gt><innerelements><lt>/nav<gt>
@@ -1046,6 +1121,7 @@
 <otherelement> = <lt>noscript <noscript_attributes> <attributes><gt><htmlsafestring min=32 max=126><lt>/noscript<gt>
 <HTMLObjectElement> = <lt>object <object_attributes> <attributes><gt><paramelements><lt>/object<gt>
 <HTMLOListElement> = <lt>ol <ol_attributes> <attributes><gt><lielements><lt>/ol<gt>
+<HTMLFigCaptionElement> = <lt>figcaption <figcaption_attributes> <attributes><gt><figcaption_content><lt>/figcaption<gt>
 <HTMLOptGroupElement> = <lt>optgroup <optgroup_attributes> <attributes><gt><optionelements><lt>/optgroup<gt>
 <HTMLOptionElement> = <lt>option <option_attributes> <attributes><gt><innerelements><lt>/option<gt>
 <HTMLOutputElement> = <lt>output <output_attributes> <attributes><gt><innerelements><lt>/output<gt>
@@ -1066,7 +1142,6 @@
 <HTMLShadowElement> = <lt>shadow <attributes><gt><innerelements><lt>/shadow<gt>
 <otherelement> = <lt>small <small_attributes> <attributes><gt><innerelements><lt>/small<gt>
 <HTMLSourceElement> = <lt>source <source_attributes> <attributes><gt><innerelements><lt>/source<gt>
-<otherelement> = <lt>spacer <spacer_attributes> <attributes><gt><innerelements><lt>/spacer<gt>
 <HTMLSpanElement> = <lt>span <span_attributes> <attributes><gt><innerelements><lt>/span<gt>
 <otherelement> = <lt>strike <strike_attributes> <attributes><gt><innerelements><lt>/strike<gt>
 <otherelement> = <lt>strong <strong_attributes> <attributes><gt><innerelements><lt>/strong<gt>

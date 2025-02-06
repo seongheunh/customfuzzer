@@ -79,18 +79,6 @@
 <address_attribute> = <attribute_dir>
 <address_attributes> = <address_attribute> <address_attribute> <address_attribute> <address_attribute> <address_attribute>
 
-<applet_attribute> = <attribute_code>
-<applet_attribute> = <attribute_name>
-<applet_attribute> = <attribute_class>
-<applet_attribute> = <attribute_archive>
-<applet_attribute> = <attribute_codebase>
-<applet_attribute> = <attribute_width>
-<applet_attribute> = <attribute_alt>
-<applet_attribute> = <attribute_height>
-<applet_attribute> = <attribute_type>
-<applet_attribute> = <attribute_tabindex>
-<applet_attributes> = <applet_attribute> <applet_attribute> <applet_attribute> <applet_attribute> <applet_attribute>
-
 <area_attribute> = <attribute_target>
 <area_attribute> = <attribute_title>
 <area_attribute> = <attribute_referrerpolicy>
@@ -107,6 +95,8 @@
 <area_attribute> = <attribute_role>
 <area_attribute> = <attribute_alt>
 <area_attribute> = <attribute_tabindex>
+<area_attribute> = <attribute_ping>
+<area_attribute> = <attribute_rel>
 <area_attributes> = <area_attribute> <area_attribute> <area_attribute> <area_attribute> <area_attribute>
 
 <article_attribute> = <attribute_style>
@@ -129,6 +119,30 @@
 <audio_attribute> = <attribute_tabindex>
 <audio_attribute> = <attribute_onloadstart>
 <audio_attribute> = <attribute_autoplay>
+<audio_attribute> = <attribute_controlslist>
+<audio_attribute> = <attribute_crossorigin>
+<audio_attribute> = <attribute_disableremoteplayback>
+<audio_attribute> = <attribute_loop>
+<audio_attribute> = <attribute_muted>
+<audio_attribute> = <attribute_audioprocess>
+<audio_attribute> = <attribute_canplay>
+<audio_attribute> = <attribute_canplaythrough>
+<audio_attribute> = <attribute_complete>
+<audio_attribute> = <attribute_durationchange>
+<audio_attribute> = <attribute_emptied>
+<audio_attribute> = <attribute_ended>
+<audio_attribute> = <attribute_loadeddata>
+<audio_attribute> = <attribute_loadedmetadata>
+<audio_attribute> = <attribute_pause>
+<audio_attribute> = <attribute_ratechange>
+<audio_attribute> = <attribute_seeked>
+<audio_attribute> = <attribute_seeking>
+<audio_attribute> = <attribute_stalled>
+<audio_attribute> = <attribute_suspend>
+<audio_attribute> = <attribute_timeupdate>
+<audio_attribute> = <attribute_volumechange>
+<audio_attribute> = <attribute_waiting>
+<audio_attribute> = <attribute_play>
 <audio_attributes> = <audio_attribute> <audio_attribute> <audio_attribute> <audio_attribute> <audio_attribute>
 
 <b_attribute> = <attribute_lang>
@@ -148,10 +162,6 @@
 <base_attribute> = <attribute_class>
 <base_attribute> = <attribute_dir>
 <base_attributes> = <base_attribute> <base_attribute> <base_attribute> <base_attribute> <base_attribute>
-
-<basefont_attribute> = <attribute_name>
-<basefont_attribute> = <attribute_size>
-<basefont_attributes> = <basefont_attribute> <basefont_attribute>
 
 <bdi_attribute> = <attribute_style>
 <bdi_attribute> = <attribute_dir>
@@ -219,6 +229,8 @@
 <button_attribute> = <attribute_ondblclick>
 <button_attribute> = <attribute_ontouchstart>
 <button_attribute> = <attribute_tabindex>
+<button_attribute> = <attribute_popovertarget>
+<button_attribute> = <attribute_popovertargetaction>
 <button_attributes> = <button_attribute> <button_attribute> <button_attribute> <button_attribute> <button_attribute>
 
 <canvas_attribute> = <attribute_style>
@@ -240,13 +252,6 @@
 <caption_attribute> = <attribute_dir>
 <caption_attribute> = <attribute_tabindex>
 <caption_attributes> = <caption_attribute> <caption_attribute> <caption_attribute> <caption_attribute> <caption_attribute>
-
-<center_attribute> = <attribute_lang>
-<center_attribute> = <attribute_title>
-<center_attribute> = <attribute_class>
-<center_attribute> = <attribute_dir>
-<center_attribute> = <attribute_tabindex>
-<center_attributes> = <center_attribute> <center_attribute> <center_attribute> <center_attribute> <center_attribute>
 
 <cite_attribute> = <attribute_lang>
 <cite_attribute> = <attribute_style>
@@ -286,14 +291,6 @@
 <colgroup_attribute> = <attribute_charoff>
 <colgroup_attribute> = <attribute_tabindex>
 <colgroup_attributes> = <colgroup_attribute> <colgroup_attribute> <colgroup_attribute> <colgroup_attribute> <colgroup_attribute>
-
-<command_attribute> = <attribute_onerror>
-<command_attribute> = <attribute_name>
-<command_attribute> = <attribute_icon>
-<command_attributes> = <command_attribute> <command_attribute> <command_attribute>
-
-<content_attribute> = <attribute_select>
-<content_attributes> = <content_attribute>
 
 <data_attribute> = <attribute_value>
 <data_attributes> = <data_attribute>
@@ -471,6 +468,10 @@
 <fieldset_attribute> = <attribute_tabindex>
 <fieldset_attributes> = <fieldset_attribute> <fieldset_attribute> <fieldset_attribute> <fieldset_attribute> <fieldset_attribute>
 
+<figcaption_attribute> = <attribute_name>
+<figcaption_attribute> = <attribute_title>
+<figcaption_attributes> = <figcaption_attribute> <figcaption_attribute>
+
 <figure_attribute> = <attribute_name>
 <figure_attribute> = <attribute_title>
 <figure_attributes> = <figure_attribute> <figure_attribute>
@@ -507,6 +508,8 @@
 <form_attribute> = <attribute_target>
 <form_attribute> = <attribute_autocomplete>
 <form_attribute> = <attribute_tabindex>
+<form_attribute> = <attribute_rel>
+<form_attribute> = <attribute_autocapitalize>
 <form_attributes> = <form_attribute> <form_attribute> <form_attribute> <form_attribute> <form_attribute>
 
 <frame_attribute> = <attribute_ondragenter>
@@ -655,22 +658,11 @@
 <iframe_attribute> = <attribute_srcset>
 <iframe_attribute> = <attribute_longdesc>
 <iframe_attribute> = <attribute_tabindex>
+<iframe_attribute> = <attribute_allow>
+<iframe_attribute> = <attribute_allowpaymentrequest>
+<iframe_attribute> = <attribute_loading>
+<iframe_attribute> = <attribute_src>
 <iframe_attributes> = <iframe_attribute> <iframe_attribute> <iframe_attribute> <iframe_attribute> <iframe_attribute>
-
-<image_attribute> = <attribute_onerror>
-<image_attribute> = <attribute_height>
-<image_attribute> = <attribute_href>
-<image_attribute> = <attribute_alt>
-<image_attribute> = <attribute_onload>
-<image_attribute> = <attribute_style>
-<image_attribute> = <attribute_title>
-<image_attribute> = <attribute_width>
-<image_attribute> = <attribute_class>
-<image_attribute> = <attribute_src>
-<image_attribute> = <attribute_name>
-<image_attribute> = <attribute_srcset>
-<image_attribute> = <attribute_tabindex>
-<image_attributes> = <image_attribute> <image_attribute> <image_attribute> <image_attribute> <image_attribute>
 
 <img_attribute> = <attribute_crossorigin>
 <img_attribute> = <attribute_onerror>
@@ -708,6 +700,11 @@
 <img_attribute> = <attribute_longdesc>
 <img_attribute> = <attribute_dir>
 <img_attribute> = <attribute_tabindex>
+<img_attribute> = <attribute_decoding>
+<img_attribute> = <attribute_elementtiming>
+<img_attribute> = <attribute_fetchpriority>
+<img_attribute> = <attribute_loading>
+<img_attribute> = <attribute_src>
 <img_attributes> = <img_attribute> <img_attribute> <img_attribute> <img_attribute> <img_attribute>
 
 <input_attribute> = <attribute_results>
@@ -786,6 +783,9 @@
 <input_attribute> = <attribute_onabort>
 <input_attribute> = <attribute_draggable>
 <input_attribute> = <attribute_onselectstart>
+<input_attribute> = <attribute_autocapitalize>
+<input_attribute> = <attribute_popovertarget>
+<input_attribute> = <attribute_popovertargetaction>
 <input_attributes> = <input_attribute> <input_attribute> <input_attribute> <input_attribute> <input_attribute>
 
 <ins_attribute> = <attribute_cite>
@@ -801,15 +801,6 @@
 <kbd_attribute> = <attribute_dir>
 <kbd_attribute> = <attribute_tabindex>
 <kbd_attributes> = <kbd_attribute> <kbd_attribute> <kbd_attribute> <kbd_attribute> <kbd_attribute>
-
-<keygen_attribute> = <attribute_style>
-<keygen_attribute> = <attribute_name>
-<keygen_attribute> = <attribute_form>
-<keygen_attribute> = <attribute_onerror>
-<keygen_attribute> = <attribute_keytype>
-<keygen_attribute> = <attribute_autofocus>
-<keygen_attribute> = <attribute_challenge>
-<keygen_attributes> = <keygen_attribute> <keygen_attribute> <keygen_attribute> <keygen_attribute> <keygen_attribute>
 
 <label_attribute> = <attribute_style>
 <label_attribute> = <attribute_contenteditable>
@@ -862,6 +853,9 @@
 <link_attribute> = <attribute_target>
 <link_attribute> = <attribute_sizes>
 <link_attribute> = <attribute_async>
+<link_attribute> = <attribute_blocking>
+<link_attribute> = <attribute_fetchpriority>
+<link_attribute> = <attribute_referrerpolicy>
 <link_attributes> = <link_attribute> <link_attribute> <link_attribute> <link_attribute> <link_attribute>
 
 <listing_attribute> = <attribute_width>
@@ -902,16 +896,6 @@
 <menu_attribute> = <attribute_tabindex>
 <menu_attributes> = <menu_attribute> <menu_attribute> <menu_attribute> <menu_attribute> <menu_attribute>
 
-<menuitem_attribute> = <attribute_checked>
-<menuitem_attribute> = <attribute_default>
-<menuitem_attribute> = <attribute_label>
-<menuitem_attribute> = <attribute_disabled>
-<menuitem_attribute> = <attribute_radiogroup>
-<menuitem_attribute> = <attribute_onclick>
-<menuitem_attribute> = <attribute_type>
-<menuitem_attribute> = <attribute_icon>
-<menuitem_attributes> = <menuitem_attribute> <menuitem_attribute> <menuitem_attribute> <menuitem_attribute> <menuitem_attribute>
-
 <meta_attribute> = <attribute_text>
 <meta_attribute> = <attribute_title>
 <meta_attribute> = <attribute_charset>
@@ -922,6 +906,8 @@
 <meta_attribute> = <attribute_scheme>
 <meta_attribute> = <attribute_name>
 <meta_attribute> = <attribute_href>
+<meta_attribute> = <attribute_httpequiv>
+<meta_attribute> = <attribute_media>
 <meta_attributes> = <meta_attribute> <meta_attribute> <meta_attribute> <meta_attribute> <meta_attribute>
 
 <meter_attribute> = <attribute_disabled>
@@ -1070,9 +1056,7 @@
 <pre_attribute> = <attribute_title>
 <pre_attribute> = <attribute_onerror>
 <pre_attribute> = <attribute_class>
-<pre_attribute> = <attribute_width>
 <pre_attribute> = <attribute_oncopy>
-<pre_attribute> = <attribute_wrap>
 <pre_attribute> = <attribute_dir>
 <pre_attribute> = <attribute_tabindex>
 <pre_attributes> = <pre_attribute> <pre_attribute> <pre_attribute> <pre_attribute> <pre_attribute>
@@ -1136,17 +1120,19 @@
 <script_attribute> = <attribute_text>
 <script_attribute> = <attribute_onload>
 <script_attribute> = <attribute_style>
-<script_attribute> = <attribute_charset>
 <script_attribute> = <attribute_type>
 <script_attribute> = <attribute_nonce>
 <script_attribute> = <attribute_onbeforescriptexecute>
 <script_attribute> = <attribute_class>
 <script_attribute> = <attribute_src>
 <script_attribute> = <attribute_for>
-<script_attribute> = <attribute_language>
 <script_attribute> = <attribute_onafterscriptexecute>
 <script_attribute> = <attribute_async>
 <script_attribute> = <attribute_srcset>
+<script_attribute> = <attribute_blocking>
+<script_attribute> = <attribute_fetchpriority>
+<script_attribute> = <attribute_referrerpolicy>
+<script_attribute> = <attribute_nomodule>
 <script_attributes> = <script_attribute> <script_attribute> <script_attribute> <script_attribute> <script_attribute>
 
 <section_attribute> = <attribute_style>
@@ -1183,6 +1169,7 @@
 <select_attribute> = <attribute_ondblclick>
 <select_attribute> = <attribute_dir>
 <select_attribute> = <attribute_tabindex>
+<select_attribute> = <attribute_autocomplete>
 <select_attributes> = <select_attribute> <select_attribute> <select_attribute> <select_attribute> <select_attribute>
 
 <small_attribute> = <attribute_lang>
@@ -1200,12 +1187,9 @@
 <source_attribute> = <attribute_media>
 <source_attribute> = <attribute_srcset>
 <source_attribute> = <attribute_type>
+<source_attribute> = <attribute_height>
+<source_attribute> = <attribute_width>
 <source_attributes> = <source_attribute> <source_attribute> <source_attribute> <source_attribute> <source_attribute>
-
-<spacer_attribute> = <attribute_width>
-<spacer_attribute> = <attribute_style>
-<spacer_attribute> = <attribute_type>
-<spacer_attributes> = <spacer_attribute> <spacer_attribute> <spacer_attribute>
 
 <span_attribute> = <attribute_onerror>
 <span_attribute> = <attribute_disabled>
@@ -1258,7 +1242,6 @@
 <style_attribute> = <attribute_media>
 <style_attribute> = <attribute_dir>
 <style_attribute> = <attribute_scoped>
-<style_attribute> = <attribute_type>
 <style_attributes> = <style_attribute> <style_attribute> <style_attribute> <style_attribute> <style_attribute>
 
 <sub_attribute> = <attribute_lang>
@@ -1314,7 +1297,6 @@
 <tbody_attribute> = <attribute_title>
 <tbody_attribute> = <attribute_align>
 <tbody_attribute> = <attribute_class>
-<tbody_attribute> = <attribute_char>
 <tbody_attribute> = <attribute_bgcolor>
 <tbody_attribute> = <attribute_role>
 <tbody_attribute> = <attribute_valign>
@@ -1325,7 +1307,6 @@
 
 <td_attribute> = <attribute_colspan>
 <td_attribute> = <attribute_height>
-<td_attribute> = <attribute_char>
 <td_attribute> = <attribute_nowrap>
 <td_attribute> = <attribute_border>
 <td_attribute> = <attribute_axis>
@@ -1353,7 +1334,10 @@
 <td_attributes> = <td_attribute> <td_attribute> <td_attribute> <td_attribute> <td_attribute>
 
 <template_attribute> = <attribute_content>
-<template_attributes> = <template_attribute>
+<template_attribute> = <attribute_shadowrootmode>
+<template_attribute> = <attribute_shadowrootclonable>
+<template_attribute> = <attribute_shadowrootdelegatesfocus>
+<template_attributes> = <template_attribute> <template_attribute> <template_attribute> <template_attribute>
 
 <textarea_attribute> = <attribute_onselect>
 <textarea_attribute> = <attribute_onerror>
@@ -1390,20 +1374,24 @@
 <textarea_attribute> = <attribute_onkeyup>
 <textarea_attribute> = <attribute_dir>
 <textarea_attribute> = <attribute_tabindex>
+<textarea_attribute> = <attribute_autocapitalize>
+<textarea_attribute> = <attribute_autocomplete>
+<textarea_attribute> = <attribute_autocorrect>
+<textarea_attribute> = <attribute_form>
+<textarea_attribute> = <attribute_minlength>
 <textarea_attributes> = <textarea_attribute> <textarea_attribute> <textarea_attribute> <textarea_attribute> <textarea_attribute>
 
 <tfoot_attribute> = <attribute_style>
 <tfoot_attribute> = <attribute_align>
 <tfoot_attribute> = <attribute_class>
-<tfoot_attribute> = <attribute_char>
 <tfoot_attribute> = <attribute_valign>
 <tfoot_attribute> = <attribute_charoff>
 <tfoot_attribute> = <attribute_tabindex>
+<tfoot_attribute> = <attribute_bgcolor>
 <tfoot_attributes> = <tfoot_attribute> <tfoot_attribute> <tfoot_attribute> <tfoot_attribute> <tfoot_attribute>
 
 <th_attribute> = <attribute_colspan>
 <th_attribute> = <attribute_height>
-<th_attribute> = <attribute_char>
 <th_attribute> = <attribute_nowrap>
 <th_attribute> = <attribute_axis>
 <th_attribute> = <attribute_style>
@@ -1425,7 +1413,6 @@
 <thead_attribute> = <attribute_style>
 <thead_attribute> = <attribute_align>
 <thead_attribute> = <attribute_class>
-<thead_attribute> = <attribute_char>
 <thead_attribute> = <attribute_onclick>
 <thead_attribute> = <attribute_valign>
 <thead_attribute> = <attribute_charoff>
@@ -1444,13 +1431,11 @@
 <tr_attribute> = <attribute_style>
 <tr_attribute> = <attribute_align>
 <tr_attribute> = <attribute_class>
-<tr_attribute> = <attribute_char>
 <tr_attribute> = <attribute_bgcolor>
 <tr_attribute> = <attribute_role>
 <tr_attribute> = <attribute_background>
 <tr_attribute> = <attribute_valign>
 <tr_attribute> = <attribute_height>
-<tr_attribute> = <attribute_charoff>
 <tr_attribute> = <attribute_dir>
 <tr_attribute> = <attribute_tabindex>
 <tr_attributes> = <tr_attribute> <tr_attribute> <tr_attribute> <tr_attribute> <tr_attribute>
@@ -1527,6 +1512,8 @@
 <video_attribute> = <attribute_onseeked>
 <video_attribute> = <attribute_loop>
 <video_attribute> = <attribute_tabindex>
+<video_attribute> = <attribute_controlslist>
+<video_attribute> = <attribute_muted>
 <video_attributes> = <video_attribute> <video_attribute> <video_attribute> <video_attribute> <video_attribute>
 
 <wbr_attribute> = <attribute_style>

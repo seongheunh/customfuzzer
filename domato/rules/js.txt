@@ -246,8 +246,6 @@
 <HTMLAnchorElement>.charset = "<charset_value>";
 <new DOMString> = <HTMLAnchorElement>.name;
 <HTMLAnchorElement>.name = "<name_value>";
-<new DOMString> = <HTMLAnchorElement>.rev;
-<HTMLAnchorElement>.rev = "<rev_value>";
 <new DOMString> = <HTMLAnchorElement>.shape;
 <HTMLAnchorElement>.shape = "<shape_value>";
 
@@ -287,6 +285,14 @@
 <HTMLIFrameElement>.marginHeight = "<marginheight_value>";
 <new DOMString> = <HTMLIFrameElement>.marginWidth;
 <HTMLIFrameElement>.marginWidth = "<marginheight_value>";
+<new DOMString> = <HTMLIFrameElement>.allow;
+<HTMLIFrameElement>.allow = "<allow_value>";
+<new DOMString> = <HTMLIFrameElement>.allowpaymentrequest;
+<HTMLIFrameElement>.allowpaymentrequest = "<allowpaymentrequest_value>";
+<new DOMString> = <HTMLIFrameElement>.loading;
+<HTMLIFrameElement>.loading = "<loading_value>";
+<new DOMString> = <HTMLIFrameElement>.src;
+<HTMLIFrameElement>.src = "<src_value>";
 
 #HTMLTableElement
 !extends HTMLTableElement Element
@@ -417,6 +423,10 @@
 <HTMLTextAreaElement>.defaultValue = <DOMString>;
 <new DOMString> = <HTMLTextAreaElement>.value;
 <HTMLTextAreaElement>.value = "<value_value>";
+<new DOMString> = <HTMLTextAreaElement>.ping;
+<HTMLTextAreaElement>.ping = "<ping_value>";
+<new DOMString> = <HTMLTextAreaElement>.rel;
+<HTMLTextAreaElement>.rel = "<rel_value>";
 <new long> = <HTMLTextAreaElement>.textLength;
 <new boolean> = <HTMLTextAreaElement>.willValidate;
 <new ValidityState> = <HTMLTextAreaElement>.validity;
@@ -441,6 +451,16 @@
 <HTMLTextAreaElement>.setSelectionRange(<fuzzint>,<fuzzint>,<DOMString>);
 <new DOMString> = <HTMLTextAreaElement>.autocapitalize;
 <HTMLTextAreaElement>.autocapitalize = <DOMString>;
+<new DOMString> = <HTMLTextAreaElement>.autocapitalize;
+<HTMLTextAreaElement>.autocapitalize = "<autocapitalize_value>";
+<new DOMString> = <HTMLTextAreaElement>.autocomplete;
+<HTMLTextAreaElement>.autocomplete = "<autocomplete_value>";
+<new DOMString> = <HTMLTextAreaElement>.autocorrect;
+<HTMLTextAreaElement>.autocorrect = "<autocorrect_value>";
+<new DOMString> = <HTMLTextAreaElement>.form;
+<HTMLTextAreaElement>.form = "<form_value>";
+<new DOMString> = <HTMLTextAreaElement>.minlength;
+<HTMLTextAreaElement>.minlength = "<minlength_value>";
 
 #HTMLButtonElement
 !extends HTMLButtonElement Element
@@ -466,6 +486,10 @@
 <HTMLButtonElement>.type = "<type_value>";
 <new DOMString> = <HTMLButtonElement>.value;
 <HTMLButtonElement>.value = "<value_value>";
+<new DOMString> = <HTMLButtonElement>.popovertarget;
+<HTMLButtonElement>.popovertarget = "<popovertarget_value>";
+<new DOMString> = <HTMLButtonElement>.popoverTargetAction;
+<HTMLButtonElement>.popoverTargetAction = "<popovertargetaction_value>";
 <new boolean> = <HTMLButtonElement>.willValidate;
 <new ValidityState> = <HTMLButtonElement>.validity;
 <new DOMString> = <HTMLButtonElement>.validationMessage;
@@ -473,6 +497,14 @@
 <new boolean> = <HTMLButtonElement>.reportValidity();
 <HTMLButtonElement>.setCustomValidity(<DOMString>);
 <new NodeList> = <HTMLButtonElement>.labels;
+
+#HTMLFigCaptionElement
+!extends HTMLFigCaptionElement Element
+<new Element> = <HTMLFigCaptionElement>;
+<new DOMString> = <HTMLFormElement>.name;
+<HTMLFormElement>.name = "<name_value>";
+<new DOMString> = <HTMLFormElement>.title;
+<HTMLFormElement>.title = "<title_value>";
 
 #HTMLOListElement
 !extends HTMLOListElement Element
@@ -523,6 +555,10 @@
 <HTMLFormElement>.noValidate = <boolean>;
 <new DOMString> = <HTMLFormElement>.target;
 <HTMLFormElement>.target = "<target_value>";
+<new DOMString> = <HTMLFormElement>.rel;
+<HTMLFormElement>.rel = "<rel_value>";
+<new DOMString> = <HTMLFormElement>.autocapitalize;
+<HTMLFormElement>.autocapitalize = "<autocapitalize_value>";
 <new HTMLFormControlsCollection> = <HTMLFormElement>.elements;
 <new long> = <HTMLFormElement>.length;
 <new Element> = <HTMLFormElement id=1>[<int min=0 max=100>%<HTMLFormElement id=1>.length];
@@ -553,6 +589,51 @@
 #HTMLAudioElement
 !extends HTMLAudioElement HTMLMediaElement
 <new HTMLMediaElement> = <HTMLAudioElement>;
+<new DOMString> = <HTMLAudioElement>.crossOrigin;
+<HTMLAudioElement>.crossOrigin = "<crossorigin_value>";
+<new DOMString> = <HTMLAudioElement>.controlslist;
+<HTMLAudioElement>.controlslist = "<controlslist_value>";
+<new EventHandler> = <HTMLFrameSetElement>.disableRemotePlayback;
+<HTMLFrameSetElement>.disableRemotePlayback = <EventHandler>;
+<new EventHandler> = <HTMLFrameSetElement>.audioprocess;
+<HTMLFrameSetElement>.audioprocess = <EventHandler>;
+<new EventHandler> = <HTMLFrameSetElement>.canplay;
+<HTMLFrameSetElement>.canplay = <EventHandler>;
+<new EventHandler> = <HTMLFrameSetElement>.complete;
+<HTMLFrameSetElement>.complete = <EventHandler>;
+<new EventHandler> = <HTMLFrameSetElement>.durationchange;
+<HTMLFrameSetElement>.durationchange = <EventHandler>;
+<new EventHandler> = <HTMLFrameSetElement>.emptied;
+<HTMLFrameSetElement>.emptied = <EventHandler>;
+<new EventHandler> = <HTMLFrameSetElement>.ended;
+<HTMLFrameSetElement>.ended = <EventHandler>;
+<new EventHandler> = <HTMLFrameSetElement>.loadeddata;
+<HTMLFrameSetElement>.loadeddata = <EventHandler>;
+<new EventHandler> = <HTMLFrameSetElement>.loadedmetadata;
+<HTMLFrameSetElement>.loadedmetadata = <EventHandler>;
+<new EventHandler> = <HTMLFrameSetElement>.pause;
+<HTMLFrameSetElement>.pause = <EventHandler>;
+<new EventHandler> = <HTMLFrameSetElement>.ratechange;
+<HTMLFrameSetElement>.ratechange = <EventHandler>;
+<new EventHandler> = <HTMLFrameSetElement>.seeked;
+<HTMLFrameSetElement>.seeked = <EventHandler>;
+<new EventHandler> = <HTMLFrameSetElement>.seeking;
+<HTMLFrameSetElement>.seeking = <EventHandler>;
+<new EventHandler> = <HTMLFrameSetElement>.stalled;
+<HTMLFrameSetElement>.stalled = <EventHandler>;
+<new EventHandler> = <HTMLFrameSetElement>.suspend;
+<HTMLFrameSetElement>.suspend = <EventHandler>;
+<new EventHandler> = <HTMLFrameSetElement>.timeupdate;
+<HTMLFrameSetElement>.timeupdate = <EventHandler>;
+<new EventHandler> = <HTMLFrameSetElement>.volumechange;
+<HTMLFrameSetElement>.volumechange = <EventHandler>;
+<new EventHandler> = <HTMLFrameSetElement>.aiting;
+<HTMLFrameSetElement>.aiting = <EventHandler>;
+<new EventHandler> = <HTMLFrameSetElement>.play;
+<HTMLFrameSetElement>.play = <EventHandler>;
+
+
+
 
 #HTMLLegendElement
 !extends HTMLLegendElement Element
@@ -619,28 +700,6 @@
 <new long> = <HTMLPreElement>.width;
 <HTMLPreElement>.width = <fuzzint>;
 
-#HTMLKeygenElement
-!extends HTMLKeygenElement Element
-<new Element> = <HTMLKeygenElement>;
-<new boolean> = <HTMLKeygenElement>.autofocus;
-<HTMLKeygenElement>.autofocus = <boolean>;
-<new DOMString> = <HTMLKeygenElement>.challenge;
-<HTMLKeygenElement>.challenge = <DOMString>;
-<new boolean> = <HTMLKeygenElement>.disabled;
-<HTMLKeygenElement>.disabled = <boolean>;
-<new HTMLFormElement> = <HTMLKeygenElement>.form;
-<new DOMString> = <HTMLKeygenElement>.keytype;
-<HTMLKeygenElement>.keytype = "<keytype_value>";
-<new DOMString> = <HTMLKeygenElement>.name;
-<HTMLKeygenElement>.name = "<name_value>";
-<new DOMString> = <HTMLKeygenElement>.type;
-<new boolean> = <HTMLKeygenElement>.willValidate;
-<new ValidityState> = <HTMLKeygenElement>.validity;
-<new DOMString> = <HTMLKeygenElement>.validationMessage;
-<new boolean> = <HTMLKeygenElement>.checkValidity();
-<new boolean> = <HTMLKeygenElement>.reportValidity();
-<HTMLKeygenElement>.setCustomValidity(<DOMString>);
-<new NodeList> = <HTMLKeygenElement>.labels;
 
 #HTMLSourceElement
 !extends HTMLSourceElement Element
@@ -655,6 +714,10 @@
 <HTMLSourceElement>.sizes = "<sizes_value>";
 <new DOMString> = <HTMLSourceElement>.media;
 <HTMLSourceElement>.media = "<media_value>";
+<new DOMString> = <HTMLSourceElement>.height;
+<HTMLSourceElement>.height = "<height_value>";
+<new DOMString> = <HTMLSourceElement>.width;
+<HTMLSourceElement>.width = "<width_value>";
 
 #HTMLMetaElement
 !extends HTMLMetaElement Element
@@ -667,6 +730,10 @@
 <HTMLMetaElement>.content = "<content_value>";
 <new DOMString> = <HTMLMetaElement>.scheme;
 <HTMLMetaElement>.scheme = "<scheme_value>";
+<new DOMString> = <HTMLMetaElement>.httpEquiv;
+<HTMLMetaElement>.httpEquiv = "<httpequiv_value>";
+<new DOMString> = <HTMLMetaElement>.media;
+<HTMLMetaElement>.media = "<media_value>";
 
 #HTMLBaseElement
 !extends HTMLBaseElement Element
@@ -886,6 +953,8 @@
 <new boolean> = <HTMLSelectElement>.reportValidity();
 <HTMLSelectElement>.setCustomValidity(<DOMString>);
 <new NodeList> = <HTMLSelectElement>.labels;
+<new DOMString> = <HTMLSelectElement>.autocomplete;
+<HTMLSelectElement>.autocomplete = "<autocomplete_value>";
 
 #HTMLDirectoryElement
 !extends HTMLDirectoryElement Element
@@ -988,7 +1057,6 @@
 <new DOMString> = <HTMLLinkElement>.charset;
 <HTMLLinkElement>.charset = "<charset_value>";
 <new DOMString> = <HTMLLinkElement>.rev;
-<HTMLLinkElement>.rev = "<rev_value>";
 <new DOMString> = <HTMLLinkElement>.target;
 <HTMLLinkElement>.target = "<target_value>";
 <new StyleSheet> = <HTMLLinkElement>.sheet;
@@ -997,6 +1065,12 @@
 <HTMLLinkElement>.integrity = <DOMString>;
 <new USVString> = <HTMLLinkElement>.scope;
 <HTMLLinkElement>.scope = <USVString>;
+<new DOMString> = <HTMLLinkElement>.blocking;
+<HTMLLinkElement>.blocking = "<blocking_value>";
+<new DOMString> = <HTMLLinkElement>.fetchPriority;
+<HTMLLinkElement>.fetchPriority = "<fetchpriority_value>";
+<new DOMString> = <HTMLLinkElement>.referrerPolicy;
+<HTMLLinkElement>.referrerPolicy = "<referrerpolicy_value>";
 
 #HTMLCanvasElement
 !extends HTMLCanvasElement Element
@@ -1043,6 +1117,14 @@
 <HTMLScriptElement>.nonce = "<nonce_value>";
 <new DOMString> = <HTMLScriptElement>.integrity;
 <HTMLScriptElement>.integrity = <DOMString>;
+<new DOMString> = <HTMLScriptElement>.blocking;
+<HTMLScriptElement>.blocking = "<blocking_value>";
+<new DOMString> = <HTMLScriptElement>.fetchPriority;
+<HTMLScriptElement>.fetchPriority = "<fetchpriority_value>";
+<new DOMString> = <HTMLScriptElement>.referrerPolicy;
+<HTMLScriptElement>.referrerPolicy = "<referrerpolicy_value>";
+<new DOMString> = <HTMLScriptElement>.noModule;
+<HTMLScriptElement>.noModule = "<nomodule_value>";
 
 #HTMLOutputElement
 !extends HTMLOutputElement Element
@@ -1161,6 +1243,7 @@
 <HTMLLabelElement>.htmlFor = <DOMString>;
 <new Element> = <HTMLLabelElement>.control;
 
+
 #HTMLHyperlinkElementUtils
 <new USVString> = <HTMLHyperlinkElementUtils>.href;
 <HTMLHyperlinkElementUtils>.href = <USVString>;
@@ -1225,6 +1308,10 @@
 <HTMLVideoElement>.webkitExitFullScreen();
 <new long> = <HTMLVideoElement>.webkitDecodedFrameCount;
 <new long> = <HTMLVideoElement>.webkitDroppedFrameCount;
+<new DOMString> = <HTMLVideoElement>.controlsList;
+<HTMLVideoElement>.controlsList = "<controlslist_value>";
+<new DOMString> = <HTMLVideoElement>.muted;
+<HTMLVideoElement>.muted = "<muted_value>";
 
 #HTMLTableSectionElement
 !extends HTMLTableSectionElement Element
@@ -1502,24 +1589,14 @@
 <HTMLInputElement>.webkitdirectory = <boolean>;
 <new boolean> = <HTMLInputElement>.incremental;
 <HTMLInputElement>.incremental = <boolean>;
-
-#HTMLMenuItemElement
-!extends HTMLMenuItemElement Element
-<new Element> = <HTMLMenuItemElement>;
-<new DOMString> = <HTMLMenuItemElement>.type;
-<HTMLMenuItemElement>.type = "<type_value>";
-<new DOMString> = <HTMLMenuItemElement>.label;
-<HTMLMenuItemElement>.label = "<label_value>";
-<new DOMString> = <HTMLMenuItemElement>.icon;
-<HTMLMenuItemElement>.icon = "<icon_value>";
-<new boolean> = <HTMLMenuItemElement>.disabled;
-<HTMLMenuItemElement>.disabled = <boolean>;
-<new boolean> = <HTMLMenuItemElement>.checked;
-<HTMLMenuItemElement>.checked = <boolean>;
-<new DOMString> = <HTMLMenuItemElement>.radiogroup;
-<HTMLMenuItemElement>.radiogroup = "<radiogroup_value>";
-<new boolean> = <HTMLMenuItemElement>.default;
-<HTMLMenuItemElement>.default = <boolean>;
+<new DOMString> = <HTMLInputElement>.formTarget;
+<HTMLInputElement>.formTarget = "<formtarget_value>";
+<new DOMString> = <HTMLInputElement>.autocapitalize;
+<HTMLInputElement>.autocapitalize = "<autocapitalize_value>";
+<new DOMString> = <HTMLInputElement>.popovertarget;
+<HTMLInputElement>.popovertarget = "<popovertarget_value>";
+<new DOMString> = <HTMLInputElement>.popoverTargetAction;
+<HTMLInputElement>.popoverTargetAction = "<popovertargetaction_value>";
 
 #HTMLCollection
 <new long> = <HTMLCollection>.length;
@@ -1579,6 +1656,12 @@
 !extends HTMLTemplateElement Element
 <new Element> = <HTMLTemplateElement>;
 <new DocumentFragment> = <HTMLTemplateElement>.content;
+<new DOMString> = <HTMLTemplateElement>.shadowRootMode;
+<HTMLTemplateElement>.shadowRootMode = "<shadowrootmode_value>";
+<new DOMString> = <HTMLTemplateElement>.shadowRootClonable;
+<HTMLTemplateElement>.shadowRootClonable = "<shadowrootclonable_value>";
+<new DOMString> = <HTMLTemplateElement>.shadowRootDelegatesFocus;
+<HTMLTemplateElement>.shadowRootDelegatesFocus = "<shadowrootdelegatesfocus_value>";
 
 #HTMLLIElement
 !extends HTMLLIElement Element
@@ -1629,6 +1712,16 @@
 <HTMLImageElement>.longDesc = "<longdesc_value>";
 <new DOMString> = <HTMLImageElement>.border;
 <HTMLImageElement>.border = "<border_value>";
+<new DOMString> = <HTMLImageElement>.decoding;
+<HTMLImageElement>.decoding = "<decoding_value>";
+<new DOMString> = <HTMLImageElement>.elementtiming;
+<HTMLImageElement>.elementtiming = "<elementtiming_value>";
+<new DOMString> = <HTMLImageElement>.fetchPriority;
+<HTMLImageElement>.fetchPriority = "<fetchpriority_value>";
+<new DOMString> = <HTMLImageElement>.loading;
+<HTMLImageElement>.loading = "<loading_value>";
+<new DOMString> = <HTMLImageElement>.src;
+<HTMLImageElement>.src = "<src_value>";
 <new long> = <HTMLImageElement>.x;
 <new long> = <HTMLImageElement>.y;
 
@@ -1640,12 +1733,6 @@
 <new DOMString> = <HTMLOptGroupElement>.label;
 <HTMLOptGroupElement>.label = "<label_value>";
 
-#HTMLContentElement
-!extends HTMLContentElement Element
-<new Element> = <HTMLContentElement>;
-<new DOMString> = <HTMLContentElement>.select;
-<HTMLContentElement>.select = "<select_value>";
-<new NodeList> = <HTMLContentElement>.getDistributedNodes();
 
 #VideoTrackList
 !extends VideoTrackList EventTarget
@@ -3706,6 +3793,7 @@
 <Element>.setAttribute("controls", "<controls_value>");
 <Element>.setAttribute("coords", "<coords_value>");
 <Element>.setAttribute("crossorigin", "<crossorigin_value>");
+<Element>.setAttribute("controlslist", "<controlslist_value>");
 <Element>.setAttribute("data", "<data_value>");
 <Element>.setAttribute("datetime", "<datetime_value>");
 <Element>.setAttribute("declare", "<declare_value>");
@@ -3814,9 +3902,9 @@
 <Element>.setAttribute("ref", "<ref_value>");
 <Element>.setAttribute("referrerpolicy", "<referrerpolicy_value>");
 <Element>.setAttribute("rel", "<rel_value>");
+<Element>.setAttribute("autocapitalize", "<autocapitalize_value>");
 <Element>.setAttribute("required", "<required_value>");
 <Element>.setAttribute("results", "<results_value>");
-<Element>.setAttribute("rev", "<rev_value>");
 <Element>.setAttribute("reversed", "<reversed_value>");
 <Element>.setAttribute("right", "<right_value>");
 <Element>.setAttribute("rightmargin", "<rightmargin_value>");

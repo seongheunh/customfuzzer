@@ -13,27 +13,55 @@
 
 
 <charset> = <attributestring>
-<charset> = UTF-7
-<charset> = UTF-8
-<charset> = UTF-16
-<charset> = UTF-32
-<charset> = EUC-JP
-<charset> = ISO-2022-JP
-<charset> = iso-8859-1
-<charset> = Big5
-<charset> = Shift_JIS
-<charset> = UTF-8
 <charset> = US-ASCII
+<charset> = ISO-8859-1
+<charset> = ISO-8859-2
+<charset> = ISO-8859-3
+<charset> = ISO-8859-4
+<charset> = ISO-8859-5
+<charset> = ISO-8859-6
+<charset> = ISO-8859-7
+<charset> = ISO-8859-8
+<charset> = ISO-8859-9
+<charset> = ISO-8859-10
+<charset> = Shift_JIS
+<charset> = EUC-JP
+<charset> = ISO-2022-KR
+<charset> = EUC-KR
+<charset> = ISO-2022-JP
+<charset> = ISO-2022-JP-2
+<charset> = ISO-8859-6-E
+<charset> = ISO-8859-6-I
+<charset> = ISO-8859-8-E
+<charset> = ISO-8859-8-I
+<charset> = GB2312
+<charset> = Big5
+<charset> = KOI8-R
 
 <onoff> = on
 <onoff> = off
 
 <abbr_value> = <attributestring>
 
+# https://html.spec.whatwg.org/multipage/input.html#attr-input-accept
 <accept_value> = <attributestring>
 <accept_value> = audio/*
 <accept_value> = video/*
 <accept_value> = image/*
+<accept_value> = text/*
+<accept_value> = application/*
+<accept_value> = .mp3
+<accept_value> = .wav
+<accept_value> = .mp4
+<accept_value> = .mkv
+<accept_value> = .png
+<accept_value> = .jpg
+<accept_value> = .jpeg
+<accept_value> = .txt
+<accept_value> = .csv
+<accept_value> = .pdf
+<accept_value> = .zip
+<accept_value> = .tar.gz
 
 <accept-charset_value> = <charset>
 
@@ -278,6 +306,10 @@
 <coords_value> = <fuzzint>, <fuzzint>, <fuzzint>, <fuzzint>
 
 <crossorigin_value> = crossorigin
+
+<controlslist_value> = nodownload
+<controlslist_value> = nofullscreen
+<controlslist_value> = noremoteplayback
 
 <data_value> = <attributestring>
 
@@ -903,7 +935,6 @@
 <role_value> = listitem
 <role_value> = row
 <role_value> = presentation
-<role_value> = menuitem
 <role_value> = searchbox
 <role_value> = treeitem
 <role_value> = status
@@ -1350,3 +1381,95 @@
 <wrap_value> = hard
 <wrap_value> = off
 
+<popovertarget_value> = 
+
+<popovertargetaction_value> = show
+<popovertargetaction_value> = hide
+<popovertargetaction_value> = toggle
+
+<autocapitalize_value> = none
+<autocapitalize_value> = off
+<autocapitalize_value> = sentences
+<autocapitalize_value> = on
+<autocapitalize_value> = words
+<autocapitalize_value> = characters
+
+<allow_value> = accelerometer
+<allow_value> = ambient-light-sensor
+<allow_value> = autoplay
+<allow_value> = battery
+<allow_value> = camera
+<allow_value> = display-capture
+<allow_value> = document-domain
+<allow_value> = encrypted-media
+<allow_value> = fullscreen
+<allow_value> = geolocation
+<allow_value> = gyroscope
+<allow_value> = layout-animations
+<allow_value> = legacy-image-formats
+<allow_value> = magnetometer
+<allow_value> = microphone
+<allow_value> = midi
+<allow_value> = navigation-override
+<allow_value> = oversized-images
+<allow_value> = payment
+<allow_value> = picture-in-picture
+<allow_value> = publickey-credentials-get
+<allow_value> = sync-script
+<allow_value> = sync-xhr
+<allow_value> = usb
+<allow_value> = screen-wake-lock
+<allow_value> = web-share
+<allow_value> = unoptimized-images
+<allow_value> = unsized-media
+<allow_value> = xr-spatial-tracking
+
+<loading_value> = eager
+<loading_value> = lazy
+
+<allowpaymentrequest_value> = true
+<allowpaymentrequest_value> = false
+
+<decoding_value> = sync
+<decoding_value> = async
+<decoding_value> = auto
+
+<elementtiming_value> = lol
+
+<fetchpriority_value> = high
+<fetchpriority_value> = low
+<fetchpriority_value> = auto
+
+
+<blocking_value> = render
+
+<httpequiv_value> = content-security-policy
+<httpequiv_value> = content-type
+<httpequiv_value> = default-style
+<httpequiv_value> = refresh
+
+<nomodule_value> = true
+<nomodule_value> = false
+
+<shadowrootmode_value> = open
+<shadowrootmode_value> = closed
+
+<shadowrootclonable_value> = true
+<shadowrootclonable_value> = false
+
+<shadowrootdelegatesfocus_value> = true
+<shadowrootdelegatesfocus_value> = false
+
+<minlength_value> = 
+<minlength_value> = 5
+<minlength_value> = 6
+<minlength_value> = 7
+<minlength_value> = 8
+<minlength_value> = 9
+<minlength_value> = 10
+
+<autocorrect_value> = on
+<autocorrect_value> = off
+
+<autocomplete_value> = on
+<autocomplete_value> = off
