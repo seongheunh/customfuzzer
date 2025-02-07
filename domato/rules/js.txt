@@ -1057,6 +1057,7 @@
 <new DOMString> = <HTMLLinkElement>.charset;
 <HTMLLinkElement>.charset = "<charset_value>";
 <new DOMString> = <HTMLLinkElement>.rev;
+<HTMLLinkElement>.rev = "<rev_value>";
 <new DOMString> = <HTMLLinkElement>.target;
 <HTMLLinkElement>.target = "<target_value>";
 <new StyleSheet> = <HTMLLinkElement>.sheet;
