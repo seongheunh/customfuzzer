@@ -7,11 +7,11 @@ import time
 import threading
 from pathlib import Path
 
-# 환경 변수 설정
+# environ
 os.environ["ASAN_OPTIONS"] = "detect_leaks=0:detect_odr_violation=0"
 os.environ["USE_ZEND_ALLOC"] = "0"
 
-# Configuration
+#TODO: Configuration (change it to fit your system)
 CHROME_PATH = "/home/ubuntu22/chromium/src/out/asan/chrome"
 ASAN_SYMBOLIZE = "/home/ubuntu22/chromium/src/tools/valgrind/asan/asan_symbolize.py"
 BASE_DIR = "/home/ubuntu22/bababak/fuzz_cases"
@@ -21,7 +21,7 @@ CRASH_IMMIDIATE_DIR = "/home/ubuntu22/bababak/chrome_crashes/crash"
 CRASH_TIMEOUT_DIR = "/home/ubuntu22/bababak/chrome_crashes/crash_timeout"
 TIMEOUT_DIR = "/home/ubuntu22/bababak/chrome_crashes/timeout"
 
-# 지금은 안 써요 asan로그 symbolize 하려고 했는데...음...
+# not used now
 def symbolize_log(log_content):
     """Symbolize ASAN log output"""
     try:
@@ -36,9 +36,9 @@ def symbolize_log(log_content):
         print(f"Symbolization failed: {e}")
         return log_content
 
-# fuzz_cases에서 폴더 찾아서 processing으로 옮기고 퍼징 시작
+# find fuzzing target from 'fuzz_cases', and move to 'fuzz_cases/processing' for not duplicate
 def claim_case_folder(lock):
-    # 한 폴더에 동시접근 막는 lock
+    # lock
     with lock:
         case_folders = [f for f in os.listdir(BASE_DIR) if f.startswith("cases_")]
         if not case_folders:
@@ -53,7 +53,7 @@ def claim_case_folder(lock):
             print(f"Error claiming case: {e}")
             return None
 
-# 이런 문구가 있으면 asan 로그 떴다고 간주
+# detect pre-defiend pattern for catching crash
 def check_asan_log(stderr_content):
     """Check if stderr contains ASAN error log"""
     asan_indicators = [
@@ -100,33 +100,33 @@ def run_test_case(case_dir):
         proc = subprocess.Popen(cmd, env=env, stdout=stdout_f, stderr=stderr_f)
 
     '''
-    4가지의 경우로 분류
-        1. timeout 안 남 + asan 로그 없음 -> 정상 종료
-        2. timeout 안 남 + asan 로그 있음 -> crash
-        3. timeout 남 + asan 로그 없음 -> timeout
-        4. timeout 남 + asan 로그 있음 -> timeout_crash
+    we distribute 4-case result
+        1. no timeout + asan not detect -> pass
+        2. no timeout + asan detect -> crash
+        3. timeout + asan not detect -> timeout
+        4. timeout + asan detect -> timeout_crash
     '''
     try:
         returncode = proc.wait(timeout=30)
-        # Timeout 없이 종료된 경우
+        # no timeout
         with open(stderr_path, 'r') as f:
             stderr_content = f.read()
         if check_asan_log(stderr_content):
-            crash_type = "crash"  # ASAN 로그가 있으면서 즉시 종료된 경우
+            crash_type = "crash"  # no time out + asan detect
             print(f"[+] Immediate crash detected with ASAN log")
         else:
-            crash_type = None     # 정상 종료
+            crash_type = None     # pass
 
     except subprocess.TimeoutExpired:
         proc.kill()
-        # Timeout 발생한 경우
+        # timeout
         with open(stderr_path, 'r') as f:
             stderr_content = f.read()
         if check_asan_log(stderr_content):
-            crash_type = "crash_timeout"  # ASAN 로그가 있는 timeout
+            crash_type = "crash_timeout"  # timeout + asan detect
             print(f"[+] Crash timeout detected with ASAN log")
         else:
-            crash_type = "timeout"        # 일반 timeout
+            crash_type = "timeout"        # timeout
             print(f"[-] Normal timeout detected")
 
     except Exception as e:
@@ -150,7 +150,7 @@ def worker(lock):
         print(f"Processing: {os.path.basename(case_dir)}")
         try:
             crash_type = run_test_case(case_dir)
-            # crash 타입에 따라 해당 testcase를 저장할지(어디다 할지), 삭제할지 결정
+            # select archive folder by crash type
             if crash_type:
                 crash_name = f"{os.path.basename(case_dir)}_{int(time.time())}"
 
@@ -171,7 +171,7 @@ def worker(lock):
             print(f"Error processing case: {e}")
             shutil.rmtree(case_dir, ignore_errors=True)
 
-# 퍼저 멈출 때 processing 안에 있는 퍼징 중이던 파일들 삭제
+# clean up processing folder when stop the fuzzer (ctrl-C)
 def cleanup_processing_dir():
     """Clean up the processing directory"""
     for item in os.listdir(PROCESS_DIR):
@@ -193,20 +193,18 @@ def main():
     os.makedirs(CRASH_TIMEOUT_DIR, exist_ok=True)
     os.makedirs(TIMEOUT_DIR, exist_ok=True)
 
-    # 동시 실행 워커 수 (시스템 리소스에 맞게 조절)
+    #TODO: select worker count (adjust for your system)
     NUM_WORKERS = 10
     lock = threading.Lock()
 
-    # 워커 스레드 시작
     for _ in range(NUM_WORKERS):
         t = threading.Thread(target=worker, args=(lock,), daemon=True)
         t.start()
 
-    # 메인 스레드 유지
+    # main thread life
     try:
         while True:
             time.sleep(1)
-            # 주기적으로 상태 확인 로직 추가 가능
     except KeyboardInterrupt:
         print("\nFuzzing stopped by user")
         cleanup_processing_dir()
